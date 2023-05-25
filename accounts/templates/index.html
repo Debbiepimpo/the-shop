@@ -1,0 +1,85 @@
+{% extends 'base.html' %} {% load static %} {% block page_title %} Shopping {% endblock %} {% block content %}
+<section class="parallax parallax-index">
+    <div class="container main-message">
+        <div class="jumbotron"></div>
+    </div>
+</section>
+<!------ Message displaying in a div ------>
+
+{% if messages %} {% for message in messages %}
+<div class="center">
+    <div class="{{ message.tags }}">
+        <div>
+            {{ message }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<section class="container">
+    {% if request.user.get_full_name %}
+    <div class="center display-welcome">
+        <h2>Hello {{ request.user.get_full_name }}.</h2>
+    </div> {% else %}{% endif %}
+
+    <!--   Main menu icons   -->
+
+    <div class="container-fluid">
+        <div class="center index-slogan">
+            <h1 class="display-title"> Buy everything from here. </h1>
+        </div>
+        <div class="row center">
+            {% if user.is_authenticated %}
+            <div class="col-sm-6 col-md-6">
+                <div class="index-icon">
+                    <a href="{% url 'orders' %}" aria-label="purchases"> <i class="fas fa-history"></i></a>
+                </div>
+                <div class="index-sub-header">
+                    <strong class="display-title">Purchases</strong>
+                </div>
+                <div class="index-sub-text display-title">
+                    Manage your previous orders here.
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <div class="index-icon">
+                    <a href="#" aria-label="cart"> <i class="fas fa-shopping-cart"></i></a>
+                </div>
+                <div class="index-sub-header">
+                    <strong class="display-title">Shopping Cart </strong>
+                </div>
+                <div class="index-sub-text display-title">
+                    Ready to buy.
+                </div>
+            </div>
+            {% else %}
+            <div class="col-sm-6 col-md-6">
+                <div class="index-icon">
+                    <a href="{% url 'articles_to_sell' %}" aria-label="the-shop"> <i class="fas fa-store"></i></a>
+                </div>
+                <div class="index-sub-header">
+                    <strong class="display-title">Shop</strong>
+                </div>
+                <div class="index-sub-text display-title">
+                    All items can be found here.</br><small class="text-muted">Priced individually.<a href="" class="additional-info" data-toggle="modal" data-target="#exampleModal">*</a></small>.
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <div class="index-icon">
+                    <a href="{% url 'registration' %}" aria-label="register"> <i class="fas fa-user-plus"></i></a>
+                </div>
+                <div class="index-sub-header">
+                    <strong class="display-title">Register</strong>
+                </div>
+                <div class="index-sub-text display-title">
+                    Register now.
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

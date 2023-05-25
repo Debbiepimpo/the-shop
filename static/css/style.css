@@ -1,0 +1,736 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700&display=swap);
+
+/*------------------------ Main styles ----------------------------------*/
+
+html,
+body {
+    font-family: 'Montserrat', Sans-serif;
+    height: 100%!important;
+}
+
+h5,
+a {
+    color: #512d6d !important;
+}
+
+a:hover {
+    color: #f6303e !important;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #d3b6ea;
+}
+
+footer a {
+    color: #512d6d;
+}
+
+footer a:hover {
+    color: #f6303e;
+    text-decoration: none;
+}
+
+.center {
+    text-align: center;
+}
+
+.copyright-footer {
+    padding-top: 15px;
+    text-align: right;
+    color: #512d6d;
+}
+
+.breadcrumb {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+    list-style: none;
+    background-color: #d3b6ea;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    display: none;
+    padding-right: 0;
+}
+
+
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.dropdown-padd {
+    padding-left: 10px;
+}
+
+.detail-padding {
+    margin: 0 10% 0 10%;
+    padding-bottom: 30px;
+}
+
+/*------------------------ Shopping bag icon ----------------------------*/
+
+.shopping-icon {
+    width: 24px;
+    height: 24px;
+    position: relative;
+}
+
+
+.item-count {
+    position: absolute;
+    font-size: 10px;
+    font-weight: bold;
+    bottom: 12px;
+    padding: 5px 8px;
+
+}
+
+.shopping-icon-title {
+    width: 30px;
+    height: 40px;
+    padding-bottom: 10px;
+}
+
+
+/*------------------------ Navbar ---------------------------------------*/
+
+.navbar {
+    background-color: #d3b6ea;
+    margin-bottom: 0px;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #f6303e;
+}
+
+.nav-tabs .nav-link.active {
+    color: #512d6d !important;
+    background-color: #fff;
+    border-color: #f6303e #f6303e #fff;
+}
+
+.nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+
+.logo {
+    background: url("/static/img/full-logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 100px;
+    padding-bottom: 10px;
+    margin-left: 20px;
+    min-height: 40px;
+    max-height: 60px;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+
+}
+
+
+/*------------------------ Buttons --------------------------------------*/
+
+input[type="search"] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #512d6d;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.btn-colored {
+    color: #512d6d;
+    background-color: #f6303eb0;
+    border-color: #f6303eb0;
+    box-shadow: 1px 3px 20px 0px rgba(0, 0, 0, 0.47);
+}
+
+
+.btn-color {
+    color: #512d6d;
+    background-color: #f6303e40;
+    border-color: #f6303e40;
+    box-shadow: 1px 3px 20px 0px rgba(0, 0, 0, 0.47);
+}
+
+.btn-colored {
+    border-radius: 50%;
+}
+
+.btn-border,
+.btn-color {
+    border-radius: 25px;
+}
+
+.btn-colored:hover {
+    color: #d3b6ea;
+}
+
+.btn-color:hover {
+    color: #9721f4;
+}
+
+.btn-color-fs {
+    background-color: #d3b6ea;
+    border-color: #512d6d4a;
+    border-radius: 25px;
+    box-shadow: 1px 3px 20px 0px rgba(0, 0, 0, 0.47);
+}
+
+.btn-success {
+    background-color: #bbd463 !important;
+    border-color: #bbd463!important;
+    box-shadow: 1px 3px 20px 0px rgba(0, 0, 0, 0.47) !important;
+}
+
+.btn-right {
+    float: right;
+}
+
+/*------------------------ Parralax header ------------------------------*/
+
+.jumbotron {
+    background-color: rgba(255, 255, 255, 0.0);
+    padding-top: 25px;
+}
+
+.jumbotron p {
+    color: white;
+}
+
+
+.long-text {
+    display: inline-block;
+}
+
+.short-text {
+    display: none;
+}
+
+.display-contact,
+.display-professionalServices,
+.display-orders,
+.display-signUp,
+.display-login,
+.display-ShoppingBag,
+.display-chekout,
+.display-search,
+.display-detail,
+.display-password,
+.display-bookings {
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.display-password,
+.display-contact,
+.display-signUp,
+.display-login,
+.display-bookings,
+.display-checkout {
+    color: white;
+}
+
+.display-signUp,
+.display-login,
+.display-contact,
+.display-checkout {
+    font-weight: 500;
+}
+
+.display-search {
+    color: #f6303e;
+}
+
+.display-professionalServices,
+.display-detail {
+    color: #ff574b;
+    text-shadow: 2px 0px 7px #fff;
+}
+
+.display-title,
+.display-orders,
+.display-ShoppingBag {
+    color: #512d6d;
+}
+
+.main-message {
+    text-align: center;
+}
+
+
+.parallax {
+    min-height: 300px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-index {
+    background: #fff;
+}
+
+.parallax-bookings {
+    background: #fff;
+}
+
+.parallax-ProfessionalServices {
+    background: #fff;
+}
+
+.parallax-orders {
+    background: #fff;
+}
+
+.parallax-contact {
+    background: #fff;
+}
+
+.parallax-signUp,
+.parallax-login {
+   background: #fff;
+}
+
+.parallax-ShoppingBag {
+    background: #fff;
+}
+
+.parallax-checkout {
+    background: #fff;
+}
+
+.parallax-search,
+.parallax-detail {
+    background: #fff;
+}
+
+.parallax-password {
+    background: #fff;
+}
+
+
+
+/*------------------------ Index ----------------------------------------*/
+
+.display-welcome {
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+.index-title {
+    margin-top: 40px;
+    margin-bottom: 80px;
+    font-weight: 400;
+}
+
+.index-slogan {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.index-slogan h1,
+.index-title h1 {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.index-icon {
+    font-size: 52px;
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+
+.index-icon a {
+    color: #2780E3;
+}
+
+.index-icon a:hover {
+    text-decoration: none;
+}
+
+.index-sub-header {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.index-sub-text {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.bottom-register {
+    margin-bottom: 30px;
+}
+
+.additional-info {
+    text-decoration: none;
+}
+
+
+/*------------------------ Login/Register -------------------------------*/
+
+.input-forms {
+    margin-top: 35px;
+    margin-bottom: 30px;
+}
+
+
+/*------------------------ Cards on Professional Services ---------------*/
+.custom-card-img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+.card-footer {
+    text-align: center;
+    background-color: transparent;
+}
+
+.card-footer i {
+    float: left;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.card-footer .btn-color .btn-danger,
+.buttons-right {
+    float: right;
+}
+
+.buttons-left {
+    float: left;
+}
+
+
+/*------------------------ Cart -------------------------------------------*/
+
+.cart-item-height {
+    height: 95%;
+}
+
+.mb-6 {
+    text-decoration: underline;
+}
+
+/*------------------------ Progress ---------------------------------------*/
+
+.progress {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 1.5rem;
+    overflow: hidden;
+    font-size: 0.803125rem;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    color: #373a3c !important;
+    font-weight: bold;
+}
+
+.progress-available,
+.progress-approved {
+    background-color: #5ea1eb;
+}
+
+.progress-rejected {
+    background-color: #ffb4b3;
+}
+
+.progress-pending {
+    background-color: #d5bd47c4;
+}
+
+
+/*------------------------ Search ---------------------------------------*/
+
+.search-results,
+.search-title-padding {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.search-title {
+    text-decoration: underline;
+}
+
+
+/*------------------------ Calendar -------------------------------------*/
+
+.calendar-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.calendar-font {
+    color: #512d6d;
+    ;
+    font-weight: 500;
+}
+
+
+/*------------------------ orders  -------------------------------------*/
+
+.orders-title {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.orders-title>strong {
+    color: #512d6d !important;
+}
+
+.orders-submit-buttons {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.orders-complete-button {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.link-PS:hover {
+    background-color: #f6303e40;
+}
+
+.link-Hrs:hover {
+    background-color: #d3b6ea40;
+}
+
+.status-color {
+    color: #f6303ec7;
+}
+
+
+/*------------------------ Checkout Ticket ------------------------------*/
+
+.table-color {
+    background-color: #d3b6eac4;
+}
+
+.table-colored {
+    background-color: #512d6dd1;
+    color: #fff;
+    font-size: medium;
+}
+
+/*------------------------ Checkout  ------------------------------------*/
+
+.checkout-button {
+    padding-bottom: 20px;
+}
+
+.reset-button {
+    cursor: pointer;
+    -webkit-appearance: none;
+    border: none;
+    background: transparent;
+    font-size: 27px;
+    vertical-align: middle;
+}
+
+.payment-errors {
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+
+/*-------------------------- Media ---------------------------------------*/
+
+@media (min-width:992px) {
+    .navbar {
+        max-height: 63px;
+    }
+
+    .shopping-icon {
+        position: fixed;
+    }
+
+    .item-count {
+        position: inherit;
+        font-size: 10px;
+        font-weight: bold;
+        bottom: 12px;
+        padding: 5px 8px;
+        margin-left: 0.5px;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .breadcrumb {
+        padding-left: 160px;
+    }
+
+    .item-count {
+        position: inherit;
+        font-size: 10px;
+        font-weight: bold;
+        bottom: 12px;
+        padding: 5px 8px;
+        margin-left: 0.5px;
+    }
+
+}
+
+@media only screen and (max-width: 577px) {
+    .orders-buttons {
+        margin-top: 18px;
+    }
+    .logo {
+        background: url("/static/img/logo.png");
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -webkit-transition: all .5s ease-in-out;
+    }
+
+    .furlong-slogan {
+        margin-top: 30%;
+        height: 100%;
+        width: 100%;
+    }
+
+
+    .item-count {
+        position: inherit;
+        font-size: 10px;
+        font-weight: bold;
+        bottom: 12px;
+        padding: 5px 8px;
+        margin-left: 0.5px;
+    }
+}
+
+@media (min-width: 576px) {
+    .jumbotron {
+        padding: 7rem 2rem;
+    }
+
+
+    .item-count {
+        font-size: 10px;
+        font-weight: bold;
+        top: -15px;
+        bottom: 12px;
+        padding: 0px 8px;
+        margin-left: 0.5px;
+    }
+}
+
+@media (max-width: 575px) {
+
+    .long-text {
+        display: none;
+    }
+    .short-text {
+        display: inline-block;
+    }
+
+    .jumbotron {
+        padding: 2.5rem 2rem;
+    }
+
+    .parallax {
+        min-height: 300px;
+    }
+
+    .logo {
+        background: url("/static/img/logo.png");
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -webkit-transition: all .5s ease-in-out;
+    }
+
+    .furlong-slogan {
+        margin-top: 30%;
+        height: 100%;
+        width: 100%;
+    }
+
+    .shopping-icon {
+        margin-top: 0px;
+        position: fixed;
+    }
+
+    .item-count {
+        position: inherit;
+        font-size: 10px;
+        font-weight: bold;
+        bottom: 12px;
+        padding: 0px 8px;
+        margin-left: 0.5px;
+    }
+}
+
+
+
+@media (max-width:364px) {
+    .display-bookings {
+        font-size: 59px;
+    }
+
+    .long-text {
+        display: none;
+    }
+    .short-text {
+        display: inline-block;
+    }
+
+    .parallax {
+        min-height: 300px;
+    }
+
+    .logo {
+        background: url("/static/img/logo.png");
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -webkit-transition: all .5s ease-in-out;
+    }
+
+    .furlong-slogan {
+        margin-top: 30%;
+        height: 100%;
+        width: 100%;
+    }
+    .shopping-icon {
+        position: fixed;
+    }
+
+    .item-count {
+        position: inherit;
+        font-size: 10px;
+        font-weight: bold;
+        bottom: 12px;
+        padding: 5px 8px;
+        margin-left: 0.5px;
+    }
+}

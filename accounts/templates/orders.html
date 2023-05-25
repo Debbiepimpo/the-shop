@@ -1,0 +1,90 @@
+{% extends 'base.html' %} {% load static %} {% load bootstrap4 %} {% block page_heading %} Orders {% endblock %} {% block head_js %}
+<!-- This script is to help the user to stay in the tab desire and use the pagination
+without going back to the tab the user was clicked at the beginning. -->
+<script>
+    $(document).ready(function() {
+        $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
+            localStorage.setItem('activeTab', $(e.target).attr('href'));
+        });
+        var activeTab = localStorage.getItem('activeTab');
+        if (activeTab) {
+            $('#orderTab a[href="' + activeTab + '"]').tab('show');
+        }
+    });
+</script>
+{% endblock %} {% block content %}
+
+<section class="parallax parallax-order">
+    <div class="container main-message">
+        <div class="jumbotron">
+            {% if request.user.first_name %}
+            <h1 class="display-order"> <br>{{ request.user.first_name }}'s Order History.</h1>
+            {% else %}
+            <h1 class="display-order"> <br>My orders.</h1>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!------ Message displaying in a div ------>
+
+{% if messages %} {% for message in messages %}
+<div class="center">
+    <div class="{{ message.tags }}">
+        <div>
+            {{ message }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<section class="detail-padding">
+    <p class="orders-title"><strong> Here {{ request.user.first_name }}, you can check all the orders you bought.</strong></p>
+    </br>
+    <!-- Tabs to display hours and Items    -->
+    <ul class="nav nav-tabs" id="orderTab">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#Items" aria-hidden="true">Orders ({{ totalOrders }})</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" href="{% url 'articles_to_sell' %}" role="button">Shop</a>
+        </li>
+    </ul>
+
+    <div id="tabContent" class="tab-content">
+        <div class="tab-pane fade show active" id="Items">
+            {% if Items %} {% for Item in Items_bought %}
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item link-PS card-text">
+                    <a href="{% url 'article_detail' Item.id %}">
+                        <h3>{{Item.name|truncatewords:"10"}}</h3><span><i class="far fa-clock"> {{Item.price }} h.</i>
+              </span><span><p class="card-text">{{Item.description|truncatewords:"10"}}</p></span></a>
+                </li>
+            </ul>
+
+            {% endfor %} {% else %}
+            <div class="card mb-1">
+                <h3 class="card-header">Oops! You haven't bought anything yet!</h3>
+            </div>
+            {% endif %}
+            <div class="pagination">
+                <span class="step-links">
+                    {% if Items_bought.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ Items_bought.previous_page_number }}">previous</a>
+                    <span class="current">
+                        Page {{ Items_bought.number }} of {{ Items_bought.paginator.num_pages }}.
+                    </span> {% endif %} {% if Items_bought.has_next %}
+                <span class="current">
+                        Page {{ Items_bought.number }} of {{ Items_bought.paginator.num_pages }}.
+                    </span>
+                <a href="?page={{ Items.next_page_number }}">next</a>
+                <a href="?page={{ Items.paginator.num_pages }}">last &raquo;</a> {% endif %}
+                </span>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}
